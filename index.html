@@ -582,8 +582,7 @@ settings), installed in the OS</td>
 </tr>
 <tr>
 <td>Peripheral</td>
-<td>Cash drawer (optional, controlled from the POS), barcode scanner
-(optional)</td>
+<td>Cash drawer (optional, controlled from the POS)</td>
 </tr>
 <tr>
 <td>Display kitchen</td>
@@ -761,13 +760,7 @@ manager or franchise owner).</p>
 <p><strong>On the login screen</strong>, clicking <strong>Forgot
 password?</strong> shows the message: <em>“Please contact your franchise
 administrator to reset your credentials.”</em></p>
-<blockquote>
-<p>ℹ️ <strong>Note:</strong> Pages <code>/forgot-password</code> and
-<code>/reset-password</code> also exist and can be opened by typing the
-address directly after <code>/</code>, but they are not linked from the
-login screen and may not be enabled for your deployment. The
-administrator reset above is the reliable path.</p>
-</blockquote>
+
 <h3 id="logging-out">3.5 Logging out</h3>
 <p>Step 1: Click your name/avatar area at the bottom of the sidebar.</p>
 <p>Step 2: Click <strong>Logout</strong>.</p>
@@ -1213,331 +1206,13 @@ alone — each role has an editable set of permission switches (Section
 5.3), so your installation may differ slightly from the defaults
 below.</p>
 </blockquote>
-<h3 id="permission-matrix">5.2 Permission matrix</h3>
-<p>Based on the default configuration (✅ = available, 👁️ = view only,
-❌ = not available):</p>
-<table>
-<colgroup>
-<col style="width: 9%" />
-<col style="width: 12%" />
-<col style="width: 12%" />
-<col style="width: 12%" />
-<col style="width: 12%" />
-<col style="width: 12%" />
-<col style="width: 12%" />
-<col style="width: 12%" />
-</colgroup>
-<thead>
-<tr>
-<th>Feature</th>
-<th style="text-align: right;">Super Admin</th>
-<th style="text-align: right;">Franchise Owner</th>
-<th style="text-align: right;">Branch Manager</th>
-<th style="text-align: right;">Cashier</th>
-<th style="text-align: right;">Kitchen</th>
-<th style="text-align: right;">Inventory Mgr</th>
-<th style="text-align: right;">Accountant</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>Dashboard</td>
-<td style="text-align: right;">✅</td>
-<td style="text-align: right;">✅ (all branches)</td>
-<td style="text-align: right;">✅ (own branch)</td>
-<td style="text-align: right;">✅ (own till)</td>
-<td style="text-align: right;">✅ (queue)</td>
-<td style="text-align: right;">✅ (stock)</td>
-<td style="text-align: right;">✅ (finance)</td>
-</tr>
-<tr>
-<td>POS / Billing</td>
-<td style="text-align: right;">✅</td>
-<td style="text-align: right;">✅</td>
-<td style="text-align: right;">✅</td>
-<td style="text-align: right;">✅</td>
-<td style="text-align: right;">✅ (no payment)</td>
-<td style="text-align: right;">❌</td>
-<td style="text-align: right;">❌</td>
-</tr>
-<tr>
-<td>Orders list</td>
-<td style="text-align: right;">✅</td>
-<td style="text-align: right;">✅</td>
-<td style="text-align: right;">✅</td>
-<td style="text-align: right;">✅</td>
-<td style="text-align: right;">✅</td>
-<td style="text-align: right;">❌</td>
-<td style="text-align: right;">❌</td>
-</tr>
-<tr>
-<td>Kitchen Display</td>
-<td style="text-align: right;">✅</td>
-<td style="text-align: right;">✅</td>
-<td style="text-align: right;">✅</td>
-<td style="text-align: right;">✅</td>
-<td style="text-align: right;">✅</td>
-<td style="text-align: right;">❌</td>
-<td style="text-align: right;">❌</td>
-</tr>
-<tr>
-<td>Menu (view)</td>
-<td style="text-align: right;">✅</td>
-<td style="text-align: right;">✅</td>
-<td style="text-align: right;">✅</td>
-<td style="text-align: right;">❌</td>
-<td style="text-align: right;">👁️</td>
-<td style="text-align: right;">❌</td>
-<td style="text-align: right;">❌</td>
-</tr>
-<tr>
-<td>Menu (create/edit/delete)</td>
-<td style="text-align: right;">✅</td>
-<td style="text-align: right;">✅</td>
-<td style="text-align: right;">✅*</td>
-<td style="text-align: right;">❌</td>
-<td style="text-align: right;">❌</td>
-<td style="text-align: right;">✅ (create only)</td>
-<td style="text-align: right;">❌</td>
-</tr>
-<tr>
-<td>Combos / Offers</td>
-<td style="text-align: right;">✅</td>
-<td style="text-align: right;">✅</td>
-<td style="text-align: right;">✅*</td>
-<td style="text-align: right;">❌</td>
-<td style="text-align: right;">❌</td>
-<td style="text-align: right;">❌</td>
-<td style="text-align: right;">❌</td>
-</tr>
-<tr>
-<td>Tables &amp; Reservations</td>
-<td style="text-align: right;">✅</td>
-<td style="text-align: right;">✅</td>
-<td style="text-align: right;">✅</td>
-<td style="text-align: right;">❌</td>
-<td style="text-align: right;">✅ (manage)</td>
-<td style="text-align: right;">❌</td>
-<td style="text-align: right;">❌</td>
-</tr>
-<tr>
-<td>Online Orders / Channels</td>
-<td style="text-align: right;">✅</td>
-<td style="text-align: right;">✅</td>
-<td style="text-align: right;">✅</td>
-<td style="text-align: right;">👁️</td>
-<td style="text-align: right;">❌</td>
-<td style="text-align: right;">❌</td>
-<td style="text-align: right;">👁️ (settlements)</td>
-</tr>
-<tr>
-<td>Inventory</td>
-<td style="text-align: right;">✅</td>
-<td style="text-align: right;">✅</td>
-<td style="text-align: right;">✅</td>
-<td style="text-align: right;">❌</td>
-<td style="text-align: right;">👁️</td>
-<td style="text-align: right;">✅</td>
-<td style="text-align: right;">❌</td>
-</tr>
-<tr>
-<td>Vendors / Purchase Orders</td>
-<td style="text-align: right;">✅</td>
-<td style="text-align: right;">✅</td>
-<td style="text-align: right;">✅</td>
-<td style="text-align: right;">❌</td>
-<td style="text-align: right;">❌</td>
-<td style="text-align: right;">✅</td>
-<td style="text-align: right;">❌</td>
-</tr>
-<tr>
-<td>Cash Drawer</td>
-<td style="text-align: right;">✅</td>
-<td style="text-align: right;">✅</td>
-<td style="text-align: right;">✅</td>
-<td style="text-align: right;">✅</td>
-<td style="text-align: right;">❌</td>
-<td style="text-align: right;">❌</td>
-<td style="text-align: right;">✅</td>
-</tr>
-<tr>
-<td>Expenses</td>
-<td style="text-align: right;">✅</td>
-<td style="text-align: right;">✅</td>
-<td style="text-align: right;">✅</td>
-<td style="text-align: right;">❌</td>
-<td style="text-align: right;">❌</td>
-<td style="text-align: right;">❌</td>
-<td style="text-align: right;">✅</td>
-</tr>
-<tr>
-<td>Refunds / Voids</td>
-<td style="text-align: right;">✅</td>
-<td style="text-align: right;">✅</td>
-<td style="text-align: right;">✅</td>
-<td style="text-align: right;">✅ (request/approve)</td>
-<td style="text-align: right;">❌</td>
-<td style="text-align: right;">❌</td>
-<td style="text-align: right;">✅</td>
-</tr>
-<tr>
-<td>Tax &amp; Compliance</td>
-<td style="text-align: right;">✅</td>
-<td style="text-align: right;">✅</td>
-<td style="text-align: right;">👁️</td>
-<td style="text-align: right;">👁️</td>
-<td style="text-align: right;">❌</td>
-<td style="text-align: right;">❌</td>
-<td style="text-align: right;">✅</td>
-</tr>
-<tr>
-<td>Reports &amp; Analytics</td>
-<td style="text-align: right;">✅</td>
-<td style="text-align: right;">✅</td>
-<td style="text-align: right;">✅ (own branch)</td>
-<td style="text-align: right;">❌</td>
-<td style="text-align: right;">❌</td>
-<td style="text-align: right;">❌</td>
-<td style="text-align: right;">✅</td>
-</tr>
-<tr>
-<td>Staff: Employees</td>
-<td style="text-align: right;">✅</td>
-<td style="text-align: right;">✅</td>
-<td style="text-align: right;">✅</td>
-<td style="text-align: right;">❌</td>
-<td style="text-align: right;">❌</td>
-<td style="text-align: right;">❌</td>
-<td style="text-align: right;">❌</td>
-</tr>
-<tr>
-<td>Attendance (own)</td>
-<td style="text-align: right;">✅</td>
-<td style="text-align: right;">✅</td>
-<td style="text-align: right;">✅</td>
-<td style="text-align: right;">✅</td>
-<td style="text-align: right;">✅</td>
-<td style="text-align: right;">✅</td>
-<td style="text-align: right;">✅</td>
-</tr>
-<tr>
-<td>Users management</td>
-<td style="text-align: right;">✅</td>
-<td style="text-align: right;">✅</td>
-<td style="text-align: right;">❌</td>
-<td style="text-align: right;">❌</td>
-<td style="text-align: right;">❌</td>
-<td style="text-align: right;">❌</td>
-<td style="text-align: right;">❌</td>
-</tr>
-<tr>
-<td>Branches</td>
-<td style="text-align: right;">✅</td>
-<td style="text-align: right;">✅</td>
-<td style="text-align: right;">❌</td>
-<td style="text-align: right;">❌</td>
-<td style="text-align: right;">❌</td>
-<td style="text-align: right;">❌</td>
-<td style="text-align: right;">❌</td>
-</tr>
-<tr>
-<td>Franchises (Tenants)</td>
-<td style="text-align: right;">✅</td>
-<td style="text-align: right;">❌</td>
-<td style="text-align: right;">❌</td>
-<td style="text-align: right;">❌</td>
-<td style="text-align: right;">❌</td>
-<td style="text-align: right;">❌</td>
-<td style="text-align: right;">❌</td>
-</tr>
-<tr>
-<td>Leads, Plans, Integrations, WhatsApp console</td>
-<td style="text-align: right;">✅</td>
-<td style="text-align: right;">❌</td>
-<td style="text-align: right;">❌</td>
-<td style="text-align: right;">❌</td>
-<td style="text-align: right;">❌</td>
-<td style="text-align: right;">❌</td>
-<td style="text-align: right;">❌</td>
-</tr>
-<tr>
-<td>User Roles (permissions)</td>
-<td style="text-align: right;">✅</td>
-<td style="text-align: right;">❌</td>
-<td style="text-align: right;">❌</td>
-<td style="text-align: right;">❌</td>
-<td style="text-align: right;">❌</td>
-<td style="text-align: right;">❌</td>
-<td style="text-align: right;">❌</td>
-</tr>
-<tr>
-<td>Receipt Settings</td>
-<td style="text-align: right;">✅</td>
-<td style="text-align: right;">✅</td>
-<td style="text-align: right;">✅</td>
-<td style="text-align: right;">❌</td>
-<td style="text-align: right;">❌</td>
-<td style="text-align: right;">❌</td>
-<td style="text-align: right;">❌</td>
-</tr>
-<tr>
-<td>Settings</td>
-<td style="text-align: right;">✅</td>
-<td style="text-align: right;">✅ (limited tabs)</td>
-<td style="text-align: right;">✅ (limited tabs)</td>
-<td style="text-align: right;">❌</td>
-<td style="text-align: right;">❌</td>
-<td style="text-align: right;">❌</td>
-<td style="text-align: right;">❌</td>
-</tr>
-<tr>
-<td>Recycle Bin / Audit Logs</td>
-<td style="text-align: right;">✅</td>
-<td style="text-align: right;">✅</td>
-<td style="text-align: right;">❌</td>
-<td style="text-align: right;">❌</td>
-<td style="text-align: right;">❌</td>
-<td style="text-align: right;">❌</td>
-<td style="text-align: right;">❌</td>
-</tr>
-<tr>
-<td>Backup &amp; Recovery</td>
-<td style="text-align: right;">✅</td>
-<td style="text-align: right;">✅</td>
-<td style="text-align: right;">❌</td>
-<td style="text-align: right;">❌</td>
-<td style="text-align: right;">❌</td>
-<td style="text-align: right;">❌</td>
-<td style="text-align: right;">❌</td>
-</tr>
-<tr>
-<td>Data Export</td>
-<td style="text-align: right;">✅</td>
-<td style="text-align: right;">✅</td>
-<td style="text-align: right;">✅</td>
-<td style="text-align: right;">❌</td>
-<td style="text-align: right;">❌</td>
-<td style="text-align: right;">❌</td>
-<td style="text-align: right;">✅</td>
-</tr>
-<tr>
-<td>Advertisements</td>
-<td style="text-align: right;">✅</td>
-<td style="text-align: right;">✅</td>
-<td style="text-align: right;">✅ (own branch)</td>
-<td style="text-align: right;">❌</td>
-<td style="text-align: right;">❌</td>
-<td style="text-align: right;">❌</td>
-<td style="text-align: right;">❌</td>
-</tr>
-</tbody>
-</table>
+
 <p>* Subject to the role’s enabled permission switches.</p>
 <p><strong>Why a feature may be missing from your sidebar:</strong> the
 sidebar only renders items whose permission is switched on for your
 role. If you believe you need a page, ask an administrator to enable it
 in <strong>User Roles</strong>.</p>
-<h3 id="changing-what-a-role-can-do">5.3 Changing what a role can
+<h3 id="changing-what-a-role-can-do">5.2 Changing what a role can
 do</h3>
 <p>Only users with the <em>User Roles</em> permission (Super Admin by
 default) can do this.</p>
@@ -1563,7 +1238,7 @@ switch is locked and cannot be turned off. Be careful when revoking
 permissions from <em>Branch Manager</em> or <em>Cashier</em> — you may
 stop a live outlet from billing.</p>
 </blockquote>
-<h3 id="read-only-and-suspended-states">5.4 Read-only and suspended
+<h3 id="read-only-and-suspended-states">5.3 Read-only and suspended
 states</h3>
 <table>
 <colgroup>
@@ -4171,7 +3846,7 @@ Purple, Orange, Red, Teal, custom)</td>
 </tr>
 <tr>
 <td><strong>Hardware &amp; Printer</strong></td>
-<td>Thermal printer, network IP, barcode scanner configuration</td>
+<td>Thermal printer, network IP</td>
 <td>Owner/Manager</td>
 </tr>
 <tr>
